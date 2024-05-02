@@ -1,0 +1,1943 @@
+{
+	"info": {
+		"_postman_id": "3b63d66a-f919-4ec1-af33-049fbd900910",
+		"name": "MEDHUB APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32756374"
+	},
+	"item": [
+		{
+			"name": "HomeController",
+			"item": [
+				{
+					"name": "Test",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "AuthController",
+			"item": [
+				{
+					"name": "Register Doctor",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"doctor@doctor.com\",\r\n  \"password\": \"password is here\",\r\n  \"firstName\": \"Parthraj\",\r\n  \"lastName\": \"Panchal\",\r\n  \"contactNumber\": \"1234567890\",\r\n  \"userRole\":\"DOCTOR\",\r\n  \"addressLine1\":\"9985 Brunswick St\",\r\n  \"addressLine2\":\"Halifax\",\r\n  \"postalCode\":\"985 lop\",\r\n  \"licenseNumber\":\"25d12ad4f12\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/auth/register/doctor",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"auth",
+								"register",
+								"doctor"
+							],
+							"query": [
+								{
+									"key": "userName",
+									"value": "mynameisparth",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Register Doctor",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"username\": \"parthraj.panchal@dal.ca\",\r\n  \"password\": \"password is here\",\r\n  \"firstName\": \"Parthraj\",\r\n  \"lastName\": \"Panchal\",\r\n  \"contactNumber\": \"1234567890\",\r\n  \"userRole\":\"DOCTOR\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/auth/register/doctor",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"auth",
+										"register",
+										"doctor"
+									],
+									"query": [
+										{
+											"key": "userName",
+											"value": "mynameisparth",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 05 Feb 2024 18:33:28 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"responseData\": \"eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJwYXJ0aHJhai5wYW5jaGFsQGRhbC5jYSIsImlzcyI6Ik1FREhVQiBDT1JQT1JBVElPTiIsInJvbGUiOiJET0NUT1IiLCJpYXQiOjE3MDcxNTgwMDgsImV4cCI6MTcwNzI0NDQwOH0.XWKzbVIthLfm7w2sdgNkBZMgQ-H4uQLP2nPtipY8DLSmqb1erVLZTT7CdjBCfGrw\",\n    \"message\": \"Doctor registered successfully.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Register Pharmacist",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"pharma@cist.com\",\r\n  \"password\": \"password is here\",\r\n  \"firstName\": \"Parthraj\",\r\n  \"lastName\": \"Panchal\",\r\n  \"contactNumber\": \"1234567890\",\r\n  \"userRole\":\"PHARMACIST\",\r\n  \"addressLine1\":\"9985 Brunswick St\",\r\n  \"pharmacyName\":\"Lowtons pharmacy ltd\",\r\n  \"addressLine2\":\"Halifax\",\r\n  \"postalCode\":\"985 lop\",\r\n  \"licenseNumber\":\"25d12ad4f12\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/auth/register/pharmacist",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"auth",
+								"register",
+								"pharmacist"
+							],
+							"query": [
+								{
+									"key": "userName",
+									"value": "mynameisparth",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Register Doctor",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"username\": \"parthraj.panchal@dal.ca\",\r\n  \"password\": \"password is here\",\r\n  \"firstName\": \"Parthraj\",\r\n  \"lastName\": \"Panchal\",\r\n  \"contactNumber\": \"1234567890\",\r\n  \"userRole\":\"DOCTOR\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/auth/register/doctor",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"auth",
+										"register",
+										"doctor"
+									],
+									"query": [
+										{
+											"key": "userName",
+											"value": "mynameisparth",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 05 Feb 2024 18:33:28 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"responseData\": \"eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJwYXJ0aHJhai5wYW5jaGFsQGRhbC5jYSIsImlzcyI6Ik1FREhVQiBDT1JQT1JBVElPTiIsInJvbGUiOiJET0NUT1IiLCJpYXQiOjE3MDcxNTgwMDgsImV4cCI6MTcwNzI0NDQwOH0.XWKzbVIthLfm7w2sdgNkBZMgQ-H4uQLP2nPtipY8DLSmqb1erVLZTT7CdjBCfGrw\",\n    \"message\": \"Doctor registered successfully.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Sign In",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"sampleUsername\",\r\n  \"passwordHash\": \"samplePasswordHash\",\r\n  \"userType\":\"DOCTOR\" \r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/auth/signin",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"auth",
+								"signin"
+							],
+							"query": [
+								{
+									"key": "userName",
+									"value": "mynameisparth",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Sign In",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"username\": \"parthraj.panchal@dal.ca\",\r\n  \"password\": \"password is here\",\r\n  \"userRole\":\"PATIENT\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/auth/signin",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"auth",
+										"signin"
+									],
+									"query": [
+										{
+											"key": "userName",
+											"value": "mynameisparth",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 05 Feb 2024 21:08:01 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"responseData\": \"eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJwYXJ0aHJhai5wYW5jaGFsQGRhbC5jYSIsImlzcyI6Ik1FREhVQiBDT1JQT1JUQVRJT04gUFZUIExURCIsInJvbGUiOiJQQVRJRU5UIiwiaWF0IjoxNzA3MTY3MjgxLCJleHAiOjE3MDcxNjcyODJ9.lALHznymauemVnt5-7gT-b3c2znjUx_3yDiC7bTCKGA-58Vs7BtuFLw5GZPQbI3F\",\n    \"message\": \"Authentication successful.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Register Patient",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"firstName\": \"John\",\r\n  \"lastName\": \"Doe\",\r\n  \"username\": \"john_doe123\",\r\n  \"password\": \"samplePasswordHash\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/auth/register/patient",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"auth",
+								"register",
+								"patient"
+							],
+							"query": [
+								{
+									"key": "userName",
+									"value": "mynameisparth",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Register Patient",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \"username\": \"parthraj.panchal@dal.ca\",\r\n  \"password\": \"password is here\",\r\n  \"firstName\": \"Parthraj\",\r\n  \"lastName\": \"Panchal\",  \r\n  \"userRole\":\"PATIENT\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/auth/register/patient",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"auth",
+										"register",
+										"patient"
+									],
+									"query": [
+										{
+											"key": "userName",
+											"value": "mynameisparth",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 05 Feb 2024 21:11:44 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"responseData\": \"eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJwYXJ0aHJhai5wYW5jaGFsQGRhbC5jYSIsImlzcyI6Ik1FREhVQiBDT1JQT1JUQVRJT04gUFZUIExURCIsInJvbGUiOiJQQVRJRU5UIiwiaWF0IjoxNzA3MTY3NTA0LCJleHAiOjE3MDcyNTM5MDR9.ai0DW2KVH6CLc2YtM2FUSKfIipwCpZ9hSBYaWSqatXDhbgO-PQZ1Y_NyopnYDs3X\",\n    \"message\": \"Patient registered successfully.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Specialization Like Copy",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/auth/search-specializations?searchString=",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"auth",
+								"search-specializations"
+							],
+							"query": [
+								{
+									"key": "searchString",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Without Characters",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/auth/search-specializations?searchString=",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"auth",
+										"search-specializations"
+									],
+									"query": [
+										{
+											"key": "searchString",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 18 Feb 2024 18:49:45 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"responseData\": [\n        \"SP1\",\n        \"SP2\"\n    ],\n    \"message\": \"Found 2 similar specializations.\",\n    \"isSuccess\": true,\n    \"success\": true\n}"
+						},
+						{
+							"name": "With Characters",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/auth/search-specializations?searchString=SP1",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"auth",
+										"search-specializations"
+									],
+									"query": [
+										{
+											"key": "searchString",
+											"value": "SP1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 18 Feb 2024 18:50:05 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"responseData\": [\n        \"SP1\"\n    ],\n    \"message\": \"Found 1 similar specializations.\",\n    \"isSuccess\": true,\n    \"success\": true\n}"
+						},
+						{
+							"name": "Get Specialization Like Copy",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/auth/search-specializations?searchString=",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"auth",
+										"search-specializations"
+									],
+									"query": [
+										{
+											"key": "searchString",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 26 Feb 2024 15:26:24 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"responseData\": [\n        \"Cardiology\",\n        \"Dermatology\",\n        \"Orthopedics\"\n    ],\n    \"message\": \"Found 3 similar specializations.\",\n    \"isSuccess\": true,\n    \"success\": true\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "DoctorController",
+			"item": [
+				{
+					"name": "Set notification preference",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "preference",
+									"value": "true",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server}}/doctor/set_notification_preference?preference=true",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"doctor",
+								"set_notification_preference"
+							],
+							"query": [
+								{
+									"key": "preference",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get filtered doctor list",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"specializations\":[\"Cardiology\",\"Dermatology\"]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/doctor/get-filtered-list",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"doctor",
+										"get-filtered-list"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Feb 2024 18:30:35 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"responseData\": [\n        {\n            \"id\": 1,\n            \"username\": \"abcdefLs@2.com\",\n            \"firstName\": \"dfadf\",\n            \"lastName\": \"dfads\",\n            \"contactNumber\": \"fasdfdsa\",\n            \"addressLine1\": \"9985 Brunswick St\",\n            \"addressLine2\": \"Halifax\",\n            \"postalCode\": \"985 lop\",\n            \"specializationsOfDoctor\": [\n                \"SP1\",\n                \"Dermatology\"\n            ]\n        },\n        {\n            \"id\": 2,\n            \"username\": \"abcdefLs@3.com\",\n            \"firstName\": \"dfadf\",\n            \"lastName\": \"dfads\",\n            \"contactNumber\": \"fasdfdsa\",\n            \"addressLine1\": \"9985 Brunswick St\",\n            \"addressLine2\": \"Halifax\",\n            \"postalCode\": \"985 lop\",\n            \"specializationsOfDoctor\": [\n                \"Cardiology\",\n                \"Cardiology\"\n            ]\n        }\n    ],\n    \"message\": \"Found : 2 doctors.\",\n    \"isSuccess\": true,\n    \"success\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "Change password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authorization token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"specializations\":[\"Cardiology\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/doctor/get-filtered-list",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"doctor",
+								"get-filtered-list"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get filtered doctor list",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"specializations\":[\"Cardiology\",\"Dermatology\"]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/doctor/get-filtered-list",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"doctor",
+										"get-filtered-list"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Feb 2024 18:30:35 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"responseData\": [\n        {\n            \"id\": 1,\n            \"username\": \"abcdefLs@2.com\",\n            \"firstName\": \"dfadf\",\n            \"lastName\": \"dfads\",\n            \"contactNumber\": \"fasdfdsa\",\n            \"addressLine1\": \"9985 Brunswick St\",\n            \"addressLine2\": \"Halifax\",\n            \"postalCode\": \"985 lop\",\n            \"specializationsOfDoctor\": [\n                \"SP1\",\n                \"Dermatology\"\n            ]\n        },\n        {\n            \"id\": 2,\n            \"username\": \"abcdefLs@3.com\",\n            \"firstName\": \"dfadf\",\n            \"lastName\": \"dfads\",\n            \"contactNumber\": \"fasdfdsa\",\n            \"addressLine1\": \"9985 Brunswick St\",\n            \"addressLine2\": \"Halifax\",\n            \"postalCode\": \"985 lop\",\n            \"specializationsOfDoctor\": [\n                \"Cardiology\",\n                \"Cardiology\"\n            ]\n        }\n    ],\n    \"message\": \"Found : 2 doctors.\",\n    \"isSuccess\": true,\n    \"success\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "GetDoctorDetails",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/doctor/details",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"doctor",
+								"details"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateDoctorDetails",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"id\":3,\r\n   \"firstName\":\"Leigh\",\r\n   \"lastName\":\"Franks\",\r\n   \"username\":\"mijel@mailinator.com\",\r\n   \"contactNumber\": \"123-456-7890\",\r\n  \"addressLine1\": \"123 Main St\",\r\n  \"addressLine2\": \"Apt 4B\",\r\n  \"postalCode\": \"12345\",\r\n  \"licenseNumber\": \"789012\",\r\n  \"jobExpTitle\": \"Senior Doctor\",\r\n  \"jobDescription\": \"Responsible for managing patient care...\",\r\n  \"startTime\": \"2024-03-05T21:20:00.000Z\",\r\n  \"endTime\": \"2024-03-05T21:20:00.000Z\",\r\n  \"sunday\": true,\r\n  \"monday\": true,\r\n  \"tuesday\": false,\r\n  \"wednesday\": true,\r\n  \"thursday\": false,\r\n  \"friday\": true,\r\n  \"saturday\": false,\r\n  \"profilePictureBase64String\": \"base64encodedstring...\",\r\n  \"receiveEmailNotification\": true,\r\n  \"specializationsOfDoctor\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/doctor/details/edit",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"doctor",
+								"details",
+								"edit"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \"id\":3,\r\n   \"firstName\":\"Leigh\",\r\n   \"lastName\":\"Franks\",\r\n   \"username\":\"mijel@mailinator.com\",\r\n   \"contactNumber\": \"123-456-7890\",\r\n  \"addressLine1\": \"123 Main St\",\r\n  \"addressLine2\": \"Apt 4B\",\r\n  \"postalCode\": \"12345\",\r\n  \"licenseNumber\": \"789012\",\r\n  \"jobExpTitle\": \"Senior Doctor\",\r\n  \"jobDescription\": \"Responsible for managing patient care...\",\r\n  \"startTime\": \"2024-03-05T21:20:00.000Z\",\r\n  \"endTime\": \"2024-03-05T21:20:00.000Z\",\r\n  \"sunday\": true,\r\n  \"monday\": true,\r\n  \"tuesday\": false,\r\n  \"wednesday\": true,\r\n  \"thursday\": false,\r\n  \"friday\": true,\r\n  \"saturday\": false,\r\n  \"profilePictureBase64String\": \"base64encodedstring...\",\r\n  \"receiveEmailNotification\": true,\r\n  \"specializationsOfDoctor\": []\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/doctor/details/edit",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"doctor",
+										"details",
+										"edit"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 05 Mar 2024 16:19:30 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"responseData\": {\n        \"id\": 3,\n        \"username\": \"mijel@mailinator.com\",\n        \"firstName\": \"Leigh\",\n        \"lastName\": \"Franks\",\n        \"contactNumber\": \"123-456-7890\",\n        \"addressLine1\": \"123 Main St\",\n        \"addressLine2\": \"Apt 4B\",\n        \"postalCode\": \"12345\",\n        \"licenseNumber\": \"789012\",\n        \"jobExpTitle\": \"Senior Doctor\",\n        \"jobDescription\": \"Responsible for managing patient care...\",\n        \"startTime\": \"2024-03-05T21:20:00.000Z\",\n        \"endTime\": \"2024-03-05T21:20:00.000Z\",\n        \"sunday\": true,\n        \"monday\": true,\n        \"tuesday\": false,\n        \"wednesday\": true,\n        \"thursday\": false,\n        \"friday\": true,\n        \"saturday\": false,\n        \"profilePictureBase64String\": \"base64encodedstring...\",\n        \"receiveEmailNotification\": true,\n        \"specializationsOfDoctor\": []\n    },\n    \"message\": \"Doctor details updated successfully\",\n    \"isSuccess\": true,\n    \"success\": true\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "PatientController",
+			"item": [
+				{
+					"name": "Get Secured Test Resource",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authorization token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/patient/securedtestresource",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"patient",
+								"securedtestresource"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Secured Test Resource",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server}}/patient/securedtestresource",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"patient",
+										"securedtestresource"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 05 Feb 2024 21:11:59 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"responseData\": \"Secured resource accessed.\",\n    \"message\": \"successful\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Specialization Like",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/patient/search-specializations?searchString=",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"patient",
+								"search-specializations"
+							],
+							"query": [
+								{
+									"key": "searchString",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Without Characters",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/auth/search-specializations?searchString=",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"auth",
+										"search-specializations"
+									],
+									"query": [
+										{
+											"key": "searchString",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 18 Feb 2024 18:49:45 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"responseData\": [\n        \"SP1\",\n        \"SP2\"\n    ],\n    \"message\": \"Found 2 similar specializations.\",\n    \"isSuccess\": true,\n    \"success\": true\n}"
+						},
+						{
+							"name": "With Characters",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/auth/search-specializations?searchString=SP1",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"auth",
+										"search-specializations"
+									],
+									"query": [
+										{
+											"key": "searchString",
+											"value": "SP1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 18 Feb 2024 18:50:05 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"responseData\": [\n        \"SP1\"\n    ],\n    \"message\": \"Found 1 similar specializations.\",\n    \"isSuccess\": true,\n    \"success\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "Get filtered doctor list",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authorization token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"specializations\":[\"Cardiology\",\"Dermatology\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/patient/get-filtered-list",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"patient",
+								"get-filtered-list"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get filtered doctor list",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"specializations\":[\"Cardiology\",\"Dermatology\"]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/doctor/get-filtered-list",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"doctor",
+										"get-filtered-list"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Feb 2024 18:30:35 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"responseData\": [\n        {\n            \"id\": 1,\n            \"username\": \"abcdefLs@2.com\",\n            \"firstName\": \"dfadf\",\n            \"lastName\": \"dfads\",\n            \"contactNumber\": \"fasdfdsa\",\n            \"addressLine1\": \"9985 Brunswick St\",\n            \"addressLine2\": \"Halifax\",\n            \"postalCode\": \"985 lop\",\n            \"specializationsOfDoctor\": [\n                \"SP1\",\n                \"Dermatology\"\n            ]\n        },\n        {\n            \"id\": 2,\n            \"username\": \"abcdefLs@3.com\",\n            \"firstName\": \"dfadf\",\n            \"lastName\": \"dfads\",\n            \"contactNumber\": \"fasdfdsa\",\n            \"addressLine1\": \"9985 Brunswick St\",\n            \"addressLine2\": \"Halifax\",\n            \"postalCode\": \"985 lop\",\n            \"specializationsOfDoctor\": [\n                \"Cardiology\",\n                \"Cardiology\"\n            ]\n        }\n    ],\n    \"message\": \"Found : 2 doctors.\",\n    \"isSuccess\": true,\n    \"success\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "Book appointment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userIdOfDoctor\": 2,\r\n  \"startTime\": \"2024-03-06T14:30:00.000Z\", // Example timestamp, replace with actual timestamp\r\n  \"endTime\": \"2024-03-06T15:00:00.000Z\",   // Example timestamp, replace with actual timestamp\r\n  \"appointmentDate\": \"2024-03-10\",\r\n  \"remarksFromPatient\": \"Some remarks from the patient\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/patient/appointment/create",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"patient",
+								"appointment",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get doctor availability",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/patient/get-doctor-availability?doctorId=1",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"patient",
+								"get-doctor-availability"
+							],
+							"query": [
+								{
+									"key": "doctorId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get doctor details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/patient/get-doctor-availability?doctorId=1",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"patient",
+								"get-doctor-availability"
+							],
+							"query": [
+								{
+									"key": "doctorId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get doctor details",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server}}/patient/get-doctor-details?doctorId=1",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"patient",
+										"get-doctor-details"
+									],
+									"query": [
+										{
+											"key": "doctorId",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 09 Mar 2024 18:36:15 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"responseData\": {\n        \"id\": 1,\n        \"username\": \"abcdefLs@637.com\",\n        \"firstName\": \"dfadf\",\n        \"lastName\": \"dfads\",\n        \"contactNumber\": \"fasdfdsa\",\n        \"addressLine1\": \"9985 Brunswick St\",\n        \"addressLine2\": \"Halifax\",\n        \"postalCode\": \"985 lop\",\n        \"licenseNumber\": \"dfdksjdkj\",\n        \"jobExpTitle\": null,\n        \"jobDescription\": null,\n        \"startTime\": \"2024-03-09T16:31:39.141Z\",\n        \"endTime\": \"2024-03-09T20:01:39.141Z\",\n        \"sunday\": false,\n        \"monday\": false,\n        \"tuesday\": false,\n        \"wednesday\": false,\n        \"thursday\": false,\n        \"friday\": false,\n        \"saturday\": false,\n        \"profilePictureBase64String\": \"\",\n        \"receiveEmailNotification\": false,\n        \"specializationsOfDoctor\": [\n            \"Cardiology\"\n        ]\n    },\n    \"message\": \"Doctor details retrieved successfully\",\n    \"isSuccess\": true,\n    \"success\": true\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{authorization token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

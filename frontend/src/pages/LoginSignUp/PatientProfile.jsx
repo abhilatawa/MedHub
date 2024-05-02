@@ -1,0 +1,1 @@
+export default function PatientProfile() {    return 'Patient Profile'}

@@ -1,0 +1,102 @@
+stages:
+  - build
+  - test
+  - code_quality
+  - publish
+  - deploy
+
+backend_build:
+  image: maven:latest
+  stage: build
+  tags:
+    - medhub_deployment
+
+  script:
+    - cd Backend/ASDC
+    - echo "Building Backend Application..."
+    - ls -a
+    - mvn clean package
+    - echo "Backend Build Complete"
+  artifacts:
+    paths:
+      - Backend/ASDC/target/medhub-0.0.1-SNAPSHOT.jar
+
+backend_test:
+  image: maven:latest
+  stage: test
+  tags:
+    - medhub_deployment
+  script:
+    - cd Backend/ASDC
+    - echo "Running tests..."
+    - mvn test
+    - echo "Backend Tests Complete"
+
+code_quality:
+  image: openjdk:17
+  stage: code_quality
+  tags:
+    - medhub_deployment
+  script:
+    - cd Backend
+    - rm -rf code_smells
+    - mkdir code_smells
+    - java -jar DesigniteJava.jar -i ASDC -o code_smells
+  artifacts:
+    paths:
+      - Backend/code_smells/*.csv
+    expire_in: 1 week
+
+publish:
+  image: docker:latest
+  stage: publish
+  tags:
+    - medhub_deployment
+  variables:
+    DOCKER_TLS_CERTDIR: ""
+    DOCKER_HOST: "tcp://docker:2375"
+  services:
+    - docker:dind
+  script:
+    - pwd
+    - echo $SERVER_IP
+    - docker --version
+    - docker login -u medhubasdc -p Medhub@123 docker.io
+
+    - cd Backend/ASDC/
+    - docker build -t docker.io/medhubasdc/development:$CI_COMMIT_SHORT_SHA .
+    - docker push docker.io/medhubasdc/development:$CI_COMMIT_SHORT_SHA
+    - cd ../../
+    - cd frontend/
+    - docker build -t docker.io/medhubasdc/frontend:$CI_COMMIT_SHORT_SHA .
+    - docker push docker.io/medhubasdc/frontend:$CI_COMMIT_SHORT_SHA
+    - echo "Frontend application published successfully."
+    - cd ..
+    - ls -a
+  only:
+    - development
+
+deploy-services:
+  image: alpine:latest
+  stage: deploy
+  tags:
+    - medhub_deployment
+  script:
+    - cd Backend/
+    - echo "Deploying Backend...."
+    - apk update && apk add openssh-client sshpass
+
+    - sshpass -p "$VM_PASSWORD" ssh -o StrictHostKeyChecking=no $VM_USER@$VM_URL "docker login -u $DOCKER_HUB_USER -p $DOCKER_HUB_PWD docker.io"
+    - sshpass -p "$VM_PASSWORD" ssh -o StrictHostKeyChecking=no $VM_USER@$VM_URL "docker pull docker.io/medhubasdc/frontend:$CI_COMMIT_SHORT_SHA"
+    - sshpass -p "$VM_PASSWORD" ssh -o StrictHostKeyChecking=no $VM_USER@$VM_URL "docker pull docker.io/medhubasdc/development:$CI_COMMIT_SHORT_SHA"
+    - sshpass -p "$VM_PASSWORD" ssh -o StrictHostKeyChecking=no $VM_USER@$VM_URL "docker container rm -f frontend || true"
+    - sshpass -p "$VM_PASSWORD" ssh -o StrictHostKeyChecking=no $VM_USER@$VM_URL "docker container rm -f development || true"
+    - sshpass -p "$VM_PASSWORD" ssh -o StrictHostKeyChecking=no $VM_USER@$VM_URL "docker run -d -p 5173:5173 -e PORT=5173 --name frontend docker.io/medhubasdc/frontend:$CI_COMMIT_SHORT_SHA"
+    - sshpass -p "$VM_PASSWORD" ssh -o StrictHostKeyChecking=no $VM_USER@$VM_URL "docker run -d -p 8080:8080 -e PORT=8080 --name development docker.io/medhubasdc/development:$CI_COMMIT_SHORT_SHA"
+    - sshpass -p "$VM_PASSWORD" ssh -o StrictHostKeyChecking=no $VM_USER@$VM_URL "docker images -a"
+    - sshpass -p "$VM_PASSWORD" ssh -o StrictHostKeyChecking=no $VM_USER@$VM_URL "docker container ls -a"
+  environment:
+    name: devint
+    url: http://172.17.0.96:8080
+  only:
+    - development

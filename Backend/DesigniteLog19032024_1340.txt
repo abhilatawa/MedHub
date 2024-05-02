@@ -1,0 +1,4 @@
+DesigniteJava Enterprise. Version 2.5.5.0
+Copyright (C) 2024 Designite. All rights reserved.
+License registered successfully.
+19-03-2024 13:40:30: Total time (sec): 2
