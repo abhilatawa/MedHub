@@ -15,8 +15,7 @@ export default function ChatInputBox({ handleSendMessage }) {
   // create an object of s3
   const s3 = new S3({
     region: "us-east-2",
-    accessKeyId: "AKIA47CRWPBC5DXP6GPQ",
-    secretAccessKey: "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",
+
   });
 
   // when user uploads the file call this function
